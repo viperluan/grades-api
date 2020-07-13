@@ -15,7 +15,7 @@ const create = async (req, res) => {
     await grade.save(grade);
 
     res.send({ message: 'Grade inserida com sucesso' });
-    logger.info(`POST /grade - ${JSON.stringify()}`);
+    logger.info(`POST /grade - ${JSON.stringify(grade)}`);
   } catch (error) {
     res
       .status(500)
@@ -80,7 +80,7 @@ const update = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const data = await Pokemon.findByIdAndUpdate({ _id: id }, req.body, {
+    const data = await Grade.findByIdAndUpdate({ _id: id }, req.body, {
       new: true,
     });
 
