@@ -23,13 +23,13 @@ export default (mongoose) => {
     },
   });
 
-  // schema.method('toJSON', function () {
-  //   const { __v, _id, ...object } = this.toObject();
+  gradeSchema.method('toJSON', () => {
+    const { __v, _id, ...object } = this.toObject();
 
-  //   object.id = _id;
+    object.id = _id;
 
-  //   return object;
-  // });
+    return object;
+  });
 
   const Grade = mongoose.model('grades', gradeSchema, 'grades');
 
