@@ -23,7 +23,7 @@ export default (mongoose) => {
     },
   });
 
-  gradeSchema.method('toJSON', function () {
+  gradeSchema.method('toJSON', () => {
     const { __v, _id, ...object } = this.toObject();
 
     object.id = _id;
